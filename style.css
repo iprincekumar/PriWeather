@@ -1,0 +1,310 @@
+/* for image bg
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* background: url('weather_img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+*/
+/*
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure the video is behind the content 
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video 
+    padding-top: 20%;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to make text more readable 
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    color: white; /* Ensure the text color contrasts with the background
+}
+/* for img
+.content {
+    text-align: center;
+    padding-top: 20%;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to make text more readable
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: #111; /* Fallback background color */
+    /*overflow: hidden; Prevent scrolling */
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure the video is behind the content */
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background to make text more readable */
+    border-radius: 10px;
+    width: 50%;
+    margin: 1% auto 0 auto; /* Center horizontally and add top margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+input[type="text"], button {
+    padding: 15px;
+    width: 60%;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1.2em;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1.2em;
+    outline: none;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5a75e4, #9062c2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#weatherDisplay{
+    text-align: center; /* Center-align text */
+    margin: 20px auto;
+    font-size: 1.2em;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
+    border-radius: 10px;
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s;
+    color: #fff; /* Text color */
+    display: none;
+}
+
+#weatherDisplay p {
+    margin-bottom: 10px;
+}
+
+#weatherDisplay h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+#weatherDisplay i {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+#weatherDisplay i, #weatherDisplay p {
+    display: block;
+}
+
+#weatherDisplay p:nth-of-type(odd) {
+    font-weight: bold;
+}
+
+#weatherDisplay p:nth-of-type(even) {
+    font-style: italic;
+}
+
+/* Additional styling for sunrise and sunset */
+#weatherDisplay p:nth-of-type(5),
+#weatherDisplay p:nth-of-type(6) {
+    color: #ffcc00; /* Sunrise and sunset text color */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 2s;
+}
+
+.animate-slide-up {
+    animation: slideUp 1s;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .content, #weatherDisplay {
+        width: 60%;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    input[type="text"], button {
+        width: 70%;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 992px) {
+    .content, #weatherDisplay {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    input[type="text"], button {
+        width: 75%;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .content, #weatherDisplay {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    input[type="text"], button {
+        width: 80%;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .content, #weatherDisplay {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="text"], button {
+        width: 85%;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 400px) {
+    .content, #weatherDisplay {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    input[type="text"], button {
+        width: 90%;
+        font-size: 0.8em;
+    }
+}

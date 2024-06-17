@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PriWeather</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="bgvideo.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div id="mapContainer"></div>
+    <div class="content">
+        <h1 class="animate-fade-in" style="font-size: 50px;">Pri-Weather</h1>
+        <input type="text" id="cityInput" placeholder="Enter Location" class="animate-slide-up">
+        <button onclick="getWeather()" class="animate-slide-up">Get Weather</button>
+    </div>
+    <div id="weatherDisplay" class="animate-fade-in"></div>
+    <script src="script.js"></script>
+</body>
+</html>
